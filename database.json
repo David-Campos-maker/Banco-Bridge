@@ -1,16 +1,22 @@
 {
-  "accounts" : [
-    {
-      "name" : "David" ,
-      "uid" : "1234" ,
-      "balance" : "100.00",
-      "phone" : "+55-12345678978"
-    },
-    {
-      "name" : "Roberto" ,
-      "uid" : "4321" ,
-      "balance" : "200.00",
-      "phone" : "+55-98745612301"
-    }
-  ]
+    "accounts": [
+        {
+            "name": "David",
+            "uid": 1234,
+            "balance": 100.00,
+            "phone": "+55-12345678978"
+        },
+        {
+            "name": "Roberto",
+            "uid": 4321,
+            "balance": 200.00,
+            "phone": "+55-98745612301"
+        },
+        {
+            "name": "Maria",
+            "uid": 198455703,
+            "balance": 100.0,
+            "phone": "+55-45236854"
+        }
+    ]
 }
