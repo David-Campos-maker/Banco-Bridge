@@ -1,2 +1,2 @@
 # Banco-Bridge
-Distributed system of an internationaldigital bank
+Distributed system of an international digital bank
