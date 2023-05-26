@@ -1,4 +1,9 @@
 import json
+import sys
+
+sys.path.insert(1 , '../functions')
+
+from test_function import test
 
 with open("../database.json" , "r") as data_base_file:
     data_base = json.load(data_base_file)
@@ -19,3 +24,5 @@ creditor_account_balance = creditor_account_balance + (value_to_be_exchanged * e
 
 print('debtor`s balance -> ' + str(debtors_account_balance))
 print('credtor`s balance -> ' + str(creditor_account_balance))
+
+test()
