@@ -8,8 +8,8 @@ def get_currency_rate_by_code(currency_code: str):
         rates_data = json.load(rates_data_file)
         
     try:
-        return rates_data['exchange'][currency_code]
+        return rates_data['exchange'][currency_code]['rates']
     
     except KeyError:
-        print("Currency code not found!")
+        print(f"Currency code not found! {currency_code}")
         return None

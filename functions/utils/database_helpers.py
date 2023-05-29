@@ -22,8 +22,12 @@ def add_new_user(name: str , phone: str , balance: float):
         new_user = {'name' : name , 'uid' : uid , 'balance' : balance , 'phone' : phone}
         accounts.append(new_user)
         
-        with open(DATABASE_PATH, "w") as data_base_file:
-            json.dump(data_base , data_base_file , indent = 4)
+        try:
+            with open(DATABASE_PATH, "w") as data_base_file:
+                json.dump(data_base , data_base_file , indent = 4)
+                
+        except Exception as error:
+            print(f"An error occurred while adding new user: {error}")
             
     else:
         print("uid already in use! Try again")

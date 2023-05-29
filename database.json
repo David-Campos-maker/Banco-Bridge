@@ -3,14 +3,14 @@
         {
             "name": "David",
             "uid": 1234,
-            "balance": 10000000.00,
+            "balance": 9999529.71935,
             "phone": "+55-12345678978",
             "currency": "BRL"
         },
         {
             "name": "Roberto",
             "uid": 4321,
-            "balance": 20000000.00,
+            "balance": 20000500.0,
             "phone": "+55-98745612301",
             "currency": "BRL"
         },
@@ -24,7 +24,7 @@
         {
             "name": "american test account 1",
             "uid": 1,
-            "balance": 300.0,
+            "balance": 1302.15915,
             "phone": "+55-45236854",
             "currency": "USD"
         },
@@ -45,7 +45,7 @@
         {
             "name": "chinese test account 2",
             "uid": 4,
-            "balance": 500.0,
+            "balance": 464.32,
             "phone": "+55-45236854",
             "currency": "CNY"
         },
