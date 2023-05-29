@@ -1,16 +1,9 @@
-import json
-import sys
-import os
-from random import randrange
-sys.path.insert(1 , "./functions/utils")
-from database_helpers import add_new_user
-
+from functions.utils.database_helpers import add_new_user
 
 name = str(input('Your name -> '))
 phone = str(input('Your phone number (Use your location code ex: +55-your number) -> '))
-balance: float = 100.00
 
-add_new_user(name , phone , balance)
+add_new_user(name , phone)
 
 # database_path = os.path.join(os.path.dirname(__file__), 'database.json')
 

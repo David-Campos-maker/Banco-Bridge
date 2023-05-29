@@ -1,9 +1,6 @@
-import sys
-sys.path.insert(1 , '../functions/utils')
-sys.path.insert(2 , "../Exchange")
-from account_helpers import get_account_by_uid
-from database_helpers import update_account_balance
-from exchange_api import get_currency_rate_by_code
+from functions.utils.account_helpers import get_account_by_uid
+from functions.utils.database_helpers import update_account_balance
+from Exchange.exchange_api import get_currency_rate_by_code
 
 def transfer(debtors_uid: int , creditors_uid: int , transfer_amount: float):
     DEBTORS_ACCOUNT_DATA = get_account_by_uid(debtors_uid)
