@@ -3,14 +3,14 @@
         {
             "name": "David",
             "uid": 1234,
-            "balance": 100.0,
+            "balance": 10000000.00,
             "phone": "+55-12345678978",
             "currency": "BRL"
         },
         {
             "name": "Roberto",
             "uid": 4321,
-            "balance": 200.0,
+            "balance": 20000000.00,
             "phone": "+55-98745612301",
             "currency": "BRL"
         },
@@ -40,14 +40,14 @@
             "uid": 3,
             "balance": 500.0,
             "phone": "+55-45236854",
-            "currency": "USD"
+            "currency": "CNY"
         },
         {
             "name": "chinese test account 2",
             "uid": 4,
             "balance": 500.0,
             "phone": "+55-45236854",
-            "currency": "USD"
+            "currency": "CNY"
         },
         {
             "name": "Persetroika",
@@ -55,103 +55,5 @@
             "balance": 100.0,
             "phone": "+33-5214869"
         }
-    ],
-    "exchanges": {
-        "BRL": {
-            "rates": {
-                "BRL": 1,
-                "USD": 0.2013,
-                "JPY": 20.93,
-                "EUR": 0.1865,
-                "GBP": 0.1623,
-                "CHF": 0.2374,
-                "CAD": 0.2722,
-                "CNY": 1.4016
-            }
-        },
-        "USD": {
-            "rates": {
-                "BRL": 4.9983,
-                "USD": 1,
-                "JPY": 103.94,
-                "EUR": 0.9268,
-                "GBP": 0.8059,
-                "CHF": 1.1792,
-                "CAD": 1.3523,
-                "CNY": 6.9648
-            }
-        },
-        "JPY": {
-            "rates": {
-                "BRL": 0.0481,
-                "USD": 0.0096,
-                "JPY": 1,
-                "EUR": 0.0089,
-                "GBP": 0.0078,
-                "CHF": 0.0113,
-                "CAD": 0.013,
-                "CNY": 0.067
-            }
-        },
-        "EUR": {
-            "rates": {
-                "BRL": 5.4034,
-                "USD": 1.0791,
-                "JPY": 112.46,
-                "EUR": 1,
-                "GBP": 0.8696,
-                "CHF": 1.2726,
-                "CAD": 1.4589,
-                "CNY": 7.5167
-            }
-        },
-        "GBP": {
-            "rates": {
-                "BRL": 6.2234,
-                "USD": 1.2407,
-                "JPY": 128.96,
-                "EUR": 1.1499,
-                "GBP": 1,
-                "CHF": 1.4637,
-                "CAD": 1.6777,
-                "CNY": 8.6429
-            }
-        },
-        "CHF": {
-            "rates": {
-                "BRL": 4.2118,
-                "USD": 0.8478,
-                "JPY": 88.22,
-                "EUR": 0.7857,
-                "GBP": 0.6832,
-                "CHF": 1,
-                "CAD": 1.1462,
-                "CNY": 5.9025
-            }
-        },
-        "CAD": {
-            "rates": {
-                "BRL": 3.7037,
-                "USD": 0.7395,
-                "JPY": 76.92,
-                "EUR": 0.6855,
-                "GBP": 0.5962,
-                "CHF": 0.8724,
-                "CAD": 1,
-                "CNY": 5.1479
-            }
-        },
-        "CNY": {
-            "rates": {
-                "BRL": 0.7136,
-                "USD": 0.1436,
-                "JPY": 14.92,
-                "EUR": 0.1331,
-                "GBP": 0.1157,
-                "CHF": 0.1694,
-                "CAD": 0.1942,
-                "CNY": 1
-            }
-        }
-    }
+    ]
 }
