@@ -3,7 +3,7 @@
         {
             "name": "David",
             "uid": "abcd1234",
-            "balance": 9999529.71935,
+            "balance": 9999620.304350002,
             "phone": "+55-12345678978",
             "currency": "BRL"
         },
@@ -24,7 +24,7 @@
         {
             "name": "american test account 1",
             "uid": "hzqy1637",
-            "balance": 1302.15915,
+            "balance": 1301996823.66075,
             "phone": "+55-45236854",
             "currency": "USD"
         },
@@ -45,16 +45,23 @@
         {
             "name": "chinese test account 2",
             "uid": "bqth4650",
-            "balance": 464.32,
+            "balance": 461.32,
             "phone": "+55-45236854",
             "currency": "CNY"
         },
         {
             "name": "Perestroika",
             "uid": "TxxU7751",
-            "balance": 0.0,
+            "balance": 1079.6395499999999,
             "phone": "+49-5874632",
             "currency": "EUR"
+        },
+        {
+            "name": "Calango",
+            "uid": "YqRY3676",
+            "balance": 3372.9999999999995,
+            "phone": "+54-5821459",
+            "currency": "ARS"
         }
     ]
 }

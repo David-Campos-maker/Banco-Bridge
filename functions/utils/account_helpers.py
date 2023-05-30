@@ -1,7 +1,7 @@
 import json
 import os
 
-DATABASE_PATH = os.path.join(os.path.dirname(__file__), '..' ,'..', 'database.json')
+DATABASE_PATH = os.path.join(os.path.dirname(__file__), '..' ,'..', 'Data/database.json')
 
 def get_account_by_uid(desired_uid: str):
     with open(DATABASE_PATH , "r") as data_base_file:

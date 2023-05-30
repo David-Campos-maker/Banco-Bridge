@@ -2,7 +2,7 @@ import json
 import os
 from Models.Account import Account
 
-DATABASE_PATH = os.path.join(os.path.dirname(__file__), '..' ,'..', 'database.json')
+DATABASE_PATH = os.path.join(os.path.dirname(__file__), '..' ,'..', 'Data/database.json')
 
 def get_database():
     with open(DATABASE_PATH , "r") as data_base_file:

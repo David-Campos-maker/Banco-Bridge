@@ -2,7 +2,7 @@ from functions.utils.account_helpers import get_account_by_uid
 from functions.utils.database_helpers import update_account_balance
 from Exchange.exchange_api import get_currency_rate_by_code
 
-def transfer(debtors_uid: int , creditors_uid: int , transfer_amount: float):
+def transfer(debtors_uid: str , creditors_uid: str , transfer_amount: float):
     DEBTORS_ACCOUNT_DATA = get_account_by_uid(debtors_uid)
     CREDITORS_ACCOUNT_DATA = get_account_by_uid(creditors_uid)
     
@@ -20,16 +20,4 @@ def transfer(debtors_uid: int , creditors_uid: int , transfer_amount: float):
         update_account_balance(debtors_uid , debtors_balance)
     
     else:
-        print("Insufficient funds!")
-
-    
-creditors_account = int(input('creditor`s account uid: '))
-debtors_account = int(input('debtor`s account uid: '))
-tranfer_amount = float(input('Tranfer amount: '))
-
-
-transfer(debtors_account , creditors_account , tranfer_amount)
-
-print(get_account_by_uid(creditors_account))
-print(get_account_by_uid(debtors_account))
-    
+        print("Insufficient funds!")  
