@@ -2,58 +2,66 @@
     "accounts": [
         {
             "name": "David",
-            "uid": 1234,
-            "balance": 9999529.71935,
+            "uid": "abcd1234",
+            "balance": 9999620.304350002,
             "phone": "+55-12345678978",
             "currency": "BRL"
         },
         {
             "name": "Roberto",
-            "uid": 4321,
+            "uid": "dcba4321",
             "balance": 20000500.0,
             "phone": "+55-98745612301",
             "currency": "BRL"
         },
         {
             "name": "Maria",
-            "uid": 198455703,
+            "uid": "ghte1984",
             "balance": 100.0,
             "phone": "+55-45236854",
             "currency": "BRL"
         },
         {
             "name": "american test account 1",
-            "uid": 1,
-            "balance": 1302.15915,
+            "uid": "hzqy1637",
+            "balance": 1301996823.66075,
             "phone": "+55-45236854",
             "currency": "USD"
         },
         {
             "name": "american test account 2",
-            "uid": 2,
+            "uid": "lfbw2903",
             "balance": 500.0,
             "phone": "+55-45236854",
             "currency": "USD"
         },
         {
             "name": "chinese test account 1",
-            "uid": 3,
+            "uid": "gqoc3673",
             "balance": 500.0,
             "phone": "+55-45236854",
             "currency": "CNY"
         },
         {
             "name": "chinese test account 2",
-            "uid": 4,
-            "balance": 464.32,
+            "uid": "bqth4650",
+            "balance": 461.32,
             "phone": "+55-45236854",
             "currency": "CNY"
         },
         {
-            "name": "Persetroika",
-            "uid": 734195994,
-            "balance": 100.0,
-            "phone": "+33-5214869"
+            "name": "Perestroika",
+            "uid": "TxxU7751",
+            "balance": 1079.6395499999999,
+            "phone": "+49-5874632",
+            "currency": "EUR"
+        },
+        {
+            "name": "Calango",
+            "uid": "YqRY3676",
+            "balance": 3372.9999999999995,
+            "phone": "+54-5821459",
+            "currency": "ARS"
         }
     ]
 }
