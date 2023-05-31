@@ -1,9 +1,22 @@
-from functions.utils.database_helpers import add_new_user
+from functions.sign_in import sign_in
 
-name = str(input('Your name -> '))
-phone = str(input('Your phone number (Use your location code ex: +55-your number) -> '))
+sign_in()
 
-add_new_user(name , phone)
+
+
+
+# from functions.utils.database_helpers import add_new_user
+
+# name = str(input('Your name -> '))
+# phone = str(input('Your phone number (Use your location code ex: +55-your number) -> '))
+# access_password = str(input('Choose an access password. It must contain 8 characters, including letters and special symbols -> '))
+# card_password =  int(input('Choose a password for your card. It must be numeric and contain 6 digits -> '))
+
+# add_new_user(name , phone , access_password , card_password)
+
+
+
+
 
 # database_path = os.path.join(os.path.dirname(__file__), 'database.json')
 

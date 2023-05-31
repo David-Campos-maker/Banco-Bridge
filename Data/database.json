@@ -2,66 +2,30 @@
     "accounts": [
         {
             "name": "David",
-            "uid": "abcd1234",
-            "balance": 9999620.304350002,
-            "phone": "+55-12345678978",
-            "currency": "BRL"
-        },
-        {
-            "name": "Roberto",
-            "uid": "dcba4321",
-            "balance": 20000500.0,
-            "phone": "+55-98745612301",
-            "currency": "BRL"
-        },
-        {
-            "name": "Maria",
-            "uid": "ghte1984",
-            "balance": 100.0,
-            "phone": "+55-45236854",
-            "currency": "BRL"
-        },
-        {
-            "name": "american test account 1",
-            "uid": "hzqy1637",
-            "balance": 1301996823.66075,
-            "phone": "+55-45236854",
-            "currency": "USD"
-        },
-        {
-            "name": "american test account 2",
-            "uid": "lfbw2903",
-            "balance": 500.0,
-            "phone": "+55-45236854",
-            "currency": "USD"
-        },
-        {
-            "name": "chinese test account 1",
-            "uid": "gqoc3673",
-            "balance": 500.0,
-            "phone": "+55-45236854",
-            "currency": "CNY"
-        },
-        {
-            "name": "chinese test account 2",
-            "uid": "bqth4650",
-            "balance": 461.32,
-            "phone": "+55-45236854",
-            "currency": "CNY"
-        },
-        {
-            "name": "Perestroika",
-            "uid": "TxxU7751",
-            "balance": 1079.6395499999999,
-            "phone": "+49-5874632",
-            "currency": "EUR"
+            "uid": "FlcC8111",
+            "balance": 10000000.0,
+            "phone": "+55-30148855",
+            "currency": "BRL",
+            "access_password_hash": "$pbkdf2-sha256$29000$Wav1PmdMKYVwztlb611rjQ$azPpJc9UwHwlmGPXrruxklRdN0RchDS3YuF2As1ttWU",
+            "card_password_hash": "$pbkdf2-sha256$29000$rfX.n3PO.d.7F6LUGiOEMA$SN32w2P8OXcKOHWOspxjSYou7RyaepoiRG4qYYntPyA"
         },
         {
             "name": "Calango",
-            "uid": "YqRY3676",
-            "balance": 3372.9999999999995,
-            "phone": "+54-5821459",
-            "currency": "ARS"
+            "uid": "soTG3579",
+            "balance": 0.0,
+            "phone": "+54-52987746",
+            "currency": "ARS",
+            "access_password_hash": "$pbkdf2-sha256$29000$cW4NQQihlLLWuvdeaw3hfA$XVvncz9UgV7/EBa4jud6MyTbjoMd7H2s1lT9ycFRwT4",
+            "card_password_hash": "$pbkdf2-sha256$29000$y1lLSak1Zsy5t/a.dw5BaA$ZRQ1BcXZfy4xEbISaMRI/Xt/epZUcyCp98sMRPFUXkI"
+        },
+        {
+            "name": "Omega 3 da Top Therm",
+            "uid": "bSiP9642",
+            "balance": 0.0,
+            "phone": "+49-52416987",
+            "currency": "EUR",
+            "access_password_hash": "$pbkdf2-sha256$29000$C.H8v9e61zqndK6V0roX4g$B3hZ/Rx6VZ6AOvg6eBzNCs9cFrKSiBMgfOfaX49Vb88",
+            "card_password_hash": "$pbkdf2-sha256$29000$zxkjBAAgBAAgpNS61/r/Hw$nOAEwLp5Km0rEjI/ivsp033v9jaog54eZ/dFAss2IGQ"
         }
     ]
 }
