@@ -26,6 +26,15 @@
             "currency": "EUR",
             "access_password_hash": "$pbkdf2-sha256$29000$C.H8v9e61zqndK6V0roX4g$B3hZ/Rx6VZ6AOvg6eBzNCs9cFrKSiBMgfOfaX49Vb88",
             "card_password_hash": "$pbkdf2-sha256$29000$zxkjBAAgBAAgpNS61/r/Hw$nOAEwLp5Km0rEjI/ivsp033v9jaog54eZ/dFAss2IGQ"
+        },
+        {
+            "name": "American Guy",
+            "uid": "qfsx0166",
+            "balance": 0.0,
+            "phone": "+1-23654187",
+            "currency": "USD",
+            "access_password_hash": "$pbkdf2-sha256$29000$771XqtW6d651jnGOUcrZuw$.GUYBrzZNx1x1z7/WL2VPgXNRowGQDgSNvFayDatJZo",
+            "card_password_hash": "$pbkdf2-sha256$29000$nzMm5FyLEWJMSen9X.t9Lw$2tuCedW77.5F/3YB477bj0rk1o1LKXmhjimpKfsXlbs"
         }
     ]
 }
