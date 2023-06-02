@@ -3,8 +3,7 @@ from functions.utils.client_helpers import handle_client
 
 server_socket = socket.socket()
 
-host = socket.gethostname()
-
+host = 'localhost'
 port = 12345
 
 server_socket.bind((host, port))

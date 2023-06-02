@@ -35,6 +35,15 @@
             "currency": "USD",
             "access_password_hash": "$pbkdf2-sha256$29000$771XqtW6d651jnGOUcrZuw$.GUYBrzZNx1x1z7/WL2VPgXNRowGQDgSNvFayDatJZo",
             "card_password_hash": "$pbkdf2-sha256$29000$nzMm5FyLEWJMSen9X.t9Lw$2tuCedW77.5F/3YB477bj0rk1o1LKXmhjimpKfsXlbs"
+        },
+        {
+            "name": "Aracy da Top Therme",
+            "uid": "nGLi1191",
+            "balance": 0.0,
+            "phone": "+44-5698741",
+            "currency": "GBP",
+            "access_password_hash": "$pbkdf2-sha256$29000$h1AqhbD2/j8n5Pw/p3RuDQ$PPRuE91WPdspfSRDvJuZFZ7D1iskzE3u3IbQSufij2w",
+            "card_password_hash": "$pbkdf2-sha256$29000$z3lPSQnhPMd4LyXEeK8VQg$kqjGxu6ia7GUh1dWOagTH8O83bENYA2zOz1Kl7lNkRA"
         }
     ]
 }
