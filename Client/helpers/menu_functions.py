@@ -29,6 +29,7 @@ def login_or_sign_in_menu(client_socket: socket.socket):
         
         print("1. Sign in")
         print("2. Login")
+        print("3. Exit")
     
         choice = input("Choose the option that indicates what you want to do -> ")
     
@@ -51,7 +52,7 @@ def login_or_sign_in_menu(client_socket: socket.socket):
     
             print(data)
             
-        else:
+        elif choice == "2":
             uid = input("Enter your account uid -> ")
             password = input("Enter your password -> ")
             
@@ -66,22 +67,10 @@ def login_or_sign_in_menu(client_socket: socket.socket):
                 main_menu(client_socket)
             else:
                 print(data)
-
-# Create a TCP/IP socket
-client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-# Connect the socket to the port where the server is listening
-server_address = ('localhost', 12345)
-client_socket.connect(server_address)
-
-try:
-    # Receive welcome message from server
-    welcome_message = client_socket.recv(1024).decode()
-    print(welcome_message)
-    
-    # Show login or sign in menu
-    login_or_sign_in_menu(client_socket)
-    
-finally:
-    # Clean up the connection
-    client_socket.close()
+        
+        else:
+            client_socket.send("login:3".encode())
+            exit_message = client_socket.recv(1024).decode()
+            
+            print(exit_message)
+            return
