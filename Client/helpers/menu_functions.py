@@ -12,7 +12,13 @@ def main_menu(client_socket: socket.socket):
 
     choice = input("Choose the option that indicates what you want to do -> ")
 
+    if choice not in ["1", "2", "3", "4"]:
+        print("Invalid choice!")
+        main_menu(client_socket)
+        return
+
     if choice == "4":
+        client_socket.send(f"main:{choice}".encode())
         return
 
     client_socket.send(f"main:{choice}".encode())

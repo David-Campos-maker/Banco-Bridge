@@ -3,7 +3,7 @@ from functions.login import login
 from functions.sign_in import sign_in , get_access_password
 from functions.utils.account_helpers import get_account_by_uid
 
-def handle_main_menu(client_socket: socket.socket):
+def handle_main_menu(client_socket: socket.socket) -> bool:
     # Receive message from client
     message = client_socket.recv(1024).decode()
     
@@ -22,11 +22,12 @@ def handle_main_menu(client_socket: socket.socket):
         
     elif message == "main:4":
         # Handle logout
-        return
+        return True
     
     handle_main_menu(client_socket)
+    return False
 
-def handle_client(client_socket: socket.socket):
+def handle_client(client_socket: socket.socket) -> str:
     # Receive message from client
     message = client_socket.recv(1024).decode()
     
@@ -52,8 +53,9 @@ def handle_client(client_socket: socket.socket):
             
             if account is not None:
                 client_socket.send(f"Hello {account['name']}! \nBalance: {account['balance']}".encode())
-                handle_main_menu(client_socket)
-
+                logged_out = handle_main_menu(client_socket)
+                if logged_out:
+                    handle_client(client_socket)
             else:
                 client_socket.send("Account not found!".encode())    
                 
@@ -62,6 +64,7 @@ def handle_client(client_socket: socket.socket):
             
     elif message == "login:3":
         client_socket.send("Goodbye!".encode())
+        client_socket.close()
         return "Exit"
     
     handle_client(client_socket)
