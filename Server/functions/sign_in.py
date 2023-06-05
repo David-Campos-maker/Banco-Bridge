@@ -2,7 +2,9 @@ import socket
 from functions.utils.database_helpers import add_new_user
     
 def sign_in(name: str , phone: str , access_password: str , card_password: int):
-    add_new_user(name , phone , access_password , card_password)
+    result = add_new_user(name , phone , access_password , card_password)
+    
+    return result
 
 def get_access_password(client_socket: socket.socket) -> str:
     client_socket.send("Enter access password".encode())
