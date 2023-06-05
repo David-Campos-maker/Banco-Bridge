@@ -1,5 +1,6 @@
 import socket
 from functions.login import login
+from functions.transactions import transfer
 from functions.sign_in import sign_in , get_access_password
 from functions.utils.account_helpers import get_account_by_uid
 
@@ -10,7 +11,16 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
     # Handle main menu choice
     if message == "main:1":
         # Handle option 1
-        client_socket.send("Option 1 executed".encode())
+        client_socket.send("Transfer executed".encode())
+        
+        tranfer_data = client_socket.recv(1024).decode()
+        
+        debtors_uid , creditors_uid , transfer_amount = tranfer_data.split(",")
+        result = transfer(debtors_uid , creditors_uid , float(transfer_amount))
+        
+        client_socket.send(result.encode())
+        
+        print("Transação Feita")
             
     elif message == "main:2":
         # Handle option 2
@@ -40,8 +50,8 @@ def handle_client(client_socket: socket.socket) -> str:
         access_password = get_access_password(client_socket)
         
         if access_password is not None:
-            sign_in(name, phone, access_password, int(card_password))
-            client_socket.send("Sign in successful".encode())
+            result_message = sign_in(name, phone, access_password, int(card_password))
+            client_socket.send(result_message.encode())
             
     elif message == "login:2":
         # Handle login

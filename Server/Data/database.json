@@ -3,7 +3,7 @@
         {
             "name": "David",
             "uid": "FlcC8111",
-            "balance": 10000000.0,
+            "balance": 9995810.85,
             "phone": "+55-30148855",
             "currency": "BRL",
             "access_password_hash": "$pbkdf2-sha256$29000$Wav1PmdMKYVwztlb611rjQ$azPpJc9UwHwlmGPXrruxklRdN0RchDS3YuF2As1ttWU",
@@ -12,7 +12,7 @@
         {
             "name": "Calango",
             "uid": "soTG3579",
-            "balance": 0.0,
+            "balance": 5816.65,
             "phone": "+54-52987746",
             "currency": "ARS",
             "access_password_hash": "$pbkdf2-sha256$29000$cW4NQQihlLLWuvdeaw3hfA$XVvncz9UgV7/EBa4jud6MyTbjoMd7H2s1lT9ycFRwT4",
@@ -21,7 +21,7 @@
         {
             "name": "Omega 3 da Top Therm",
             "uid": "bSiP9642",
-            "balance": 0.0,
+            "balance": 0.0195,
             "phone": "+49-52416987",
             "currency": "EUR",
             "access_password_hash": "$pbkdf2-sha256$29000$C.H8v9e61zqndK6V0roX4g$B3hZ/Rx6VZ6AOvg6eBzNCs9cFrKSiBMgfOfaX49Vb88",

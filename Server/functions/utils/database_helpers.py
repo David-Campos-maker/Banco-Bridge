@@ -12,7 +12,7 @@ def get_accounts_data():
     data_base = get_database()
     return data_base['accounts']
     
-def add_new_user(name: str , phone: str , access_password: str , card_password: int):
+def add_new_user(name: str , phone: str , access_password: str , card_password: int) -> str:
     data_base = get_database()
     accounts = get_accounts_data()
     
@@ -36,10 +36,11 @@ def add_new_user(name: str , phone: str , access_password: str , card_password: 
             json.dump(data_base , data_base_file , indent = 4)
             
         print("Account created successfully")
-        print(f"Your account id is: '{new_account.uid}'. It will be with it that you will access your account and transfer, together with your passwords. Don't miss it!")
+        return f"Your account id is: '{new_account.uid}'. It will be with it that you will access your account and transfer, together with your passwords. Don't miss it!"
             
     except Exception as error:
         print(f"An error occurred while adding new user: {error}")
+        return f"An error occurred while adding new user: {error}"
         
         
 def updade_account_data(uid: str , new_data: dict):
