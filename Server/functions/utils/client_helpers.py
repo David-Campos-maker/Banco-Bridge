@@ -1,4 +1,5 @@
 import socket
+from typing import Optional
 from functions.login import login
 from functions.transactions import transfer
 from functions.sign_in import sign_in , get_access_password
@@ -37,7 +38,7 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
     handle_main_menu(client_socket)
     return False
 
-def handle_client(client_socket: socket.socket) -> str:
+def handle_client(client_socket: socket.socket) -> Optional[str]:
     # Receive message from client
     message = client_socket.recv(1024).decode()
     

@@ -22,13 +22,14 @@ while running:
         print('connection from', client_address)
         
         # Send welcome message
-        welcome_message = "Welcome! Enter 1 for login or 2 for sign in"
+        welcome_message = "Welcome!"
         client_socket.send(welcome_message.encode())
         
         # Handle client connection
         result = handle_client(client_socket)
         
         if result == "Exit":
+            print(result)
             running = False
         
     finally:
