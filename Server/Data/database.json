@@ -3,7 +3,7 @@
         {
             "name": "David",
             "uid": "FlcC8111",
-            "balance": 9995810.85,
+            "balance": 9999999999999906.0,
             "phone": "+55-30148855",
             "currency": "BRL",
             "access_password_hash": "$pbkdf2-sha256$29000$Wav1PmdMKYVwztlb611rjQ$azPpJc9UwHwlmGPXrruxklRdN0RchDS3YuF2As1ttWU",
@@ -21,7 +21,7 @@
         {
             "name": "Omega 3 da Top Therm",
             "uid": "bSiP9642",
-            "balance": 0.0195,
+            "balance": 500.0195,
             "phone": "+49-52416987",
             "currency": "EUR",
             "access_password_hash": "$pbkdf2-sha256$29000$C.H8v9e61zqndK6V0roX4g$B3hZ/Rx6VZ6AOvg6eBzNCs9cFrKSiBMgfOfaX49Vb88",
@@ -30,7 +30,7 @@
         {
             "name": "American Guy",
             "uid": "qfsx0166",
-            "balance": 0.0,
+            "balance": -0.03425075,
             "phone": "+1-23654187",
             "currency": "USD",
             "access_password_hash": "$pbkdf2-sha256$29000$771XqtW6d651jnGOUcrZuw$.GUYBrzZNx1x1z7/WL2VPgXNRowGQDgSNvFayDatJZo",
@@ -39,7 +39,7 @@
         {
             "name": "Aracy da Top Therme",
             "uid": "nGLi1191",
-            "balance": 0.0,
+            "balance": 10.0,
             "phone": "+44-5698741",
             "currency": "GBP",
             "access_password_hash": "$pbkdf2-sha256$29000$h1AqhbD2/j8n5Pw/p3RuDQ$PPRuE91WPdspfSRDvJuZFZ7D1iskzE3u3IbQSufij2w",
