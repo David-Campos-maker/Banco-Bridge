@@ -1,7 +1,7 @@
 import socket
 from typing import Optional
 from functions.login import login
-from functions.transactions import transfer , transfer_with_savings_account , deposit_into_savings_account
+from functions.transactions import *
 from functions.sign_in import sign_in , get_access_password
 from functions.utils.account_helpers import get_account_by_uid
 
@@ -16,8 +16,8 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
         
         tranfer_data = client_socket.recv(1024).decode()
         
-        debtors_uid , creditors_uid , transfer_amount = tranfer_data.split(",")
-        result = transfer(debtors_uid , creditors_uid , float(transfer_amount))
+        debtors_uid , creditors_uid , transfer_amount , card_password = tranfer_data.split(",")
+        result = transfer(debtors_uid , creditors_uid , float(transfer_amount) , card_password)
         
         client_socket.send(result.encode())
         
@@ -29,8 +29,8 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
         
         tranfer_data = client_socket.recv(1024).decode()
         
-        debtors_uid , creditors_uid , transfer_amount = tranfer_data.split(",")
-        result = transfer_with_savings_account(debtors_uid , creditors_uid , float(transfer_amount))
+        debtors_uid , creditors_uid , transfer_amount , card_password = tranfer_data.split(",")
+        result = transfer_with_savings_account(debtors_uid , creditors_uid , float(transfer_amount) , card_password)
         
         client_socket.send(result.encode())
         
@@ -42,14 +42,55 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
         
         tranfer_data = client_socket.recv(1024).decode()
         
-        debtors_uid , transfer_amount = tranfer_data.split(",")
-        result = deposit_into_savings_account(debtors_uid , float(transfer_amount))
+        debtors_uid , transfer_amount , card_password = tranfer_data.split(",")
+        result = deposit_into_savings_account(debtors_uid , float(transfer_amount) , card_password)
         
         client_socket.send(result.encode())
         
         print("Transação Feita")
         
     elif message == "main:4":
+        # Handle option 3
+        client_socket.send("Transfer with credit".encode())
+        
+        tranfer_data = client_socket.recv(1024).decode()
+        
+        debtors_uid , creditors_uid , transfer_amount , card_password = tranfer_data.split(",")
+        result = transfer_with_credit(debtors_uid , creditors_uid , float(transfer_amount) , card_password)
+        
+        client_socket.send(result.encode())
+        
+        print("Transação Feita")
+        
+    elif message == "main:5":
+        # Handle option 3
+        client_socket.send("Pay credit invoice".encode())
+        
+        tranfer_data = client_socket.recv(1024).decode()
+        
+        user_uid , card_password = tranfer_data.split(",")
+        
+        result = pay_credit_invoice_with_savings_account(user_uid , card_password)
+        
+        client_socket.send(result.encode())
+        
+        print("Transação Feita")
+        
+    elif message == "main:6":
+        # Handle option 6
+        client_socket.send("Pay credit invoice".encode())
+        
+        tranfer_data = client_socket.recv(1024).decode()
+        
+        user_uid , card_password = tranfer_data.split(",")
+        
+        result = pay_credit_invoice(user_uid , card_password)
+        
+        client_socket.send(result.encode())
+        
+        print("Transação Feita")
+        
+    elif message == "main:7":
         # Handle logout
         return True
     

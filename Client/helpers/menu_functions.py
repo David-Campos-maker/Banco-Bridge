@@ -1,18 +1,21 @@
 import socket
 
 def main_menu(client_socket: socket.socket):
-    print("******************")
+    print("\n******************")
     print("**  Main Menu   **")
     print("******************\n")
     
     print("1. Transfer")
     print("2. Transfer with savings account")
     print("3. Deposit into savings account")
-    print("4. Logout")
+    print("4. Transfer with credit")
+    print("5. Pay credit invoice")
+    print("6. Pay credit invoice with savings account")
+    print("7. Logout")
 
     choice = input("Choose the option that indicates what you want to do -> ")
 
-    if choice not in ["1", "2", "3", "4"]:
+    if choice not in ["1", "2", "3", "4" , "5" , "6" , "7"]:
         print("Invalid choice!")
         main_menu(client_socket)
         return
@@ -21,8 +24,9 @@ def main_menu(client_socket: socket.socket):
         debtors_uid = input("Enter your uid -> ")
         creditors_uid = input("Enter the target uid -> ")
         transfer_amount = input("Enter the transfer amount -> ")
+        card_password = input("Enter your card password -> ")
         
-        transfer_data = ",".join([debtors_uid , creditors_uid , transfer_amount])
+        transfer_data = ",".join([debtors_uid , creditors_uid , transfer_amount , card_password])
         
         client_socket.send("main:1".encode())
         
@@ -38,8 +42,9 @@ def main_menu(client_socket: socket.socket):
         debtors_uid = input("Enter your uid -> ")
         creditors_uid = input("Enter the target uid -> ")
         transfer_amount = input("Enter the transfer amount -> ")
+        card_password = input("Enter your card password -> ")
         
-        transfer_data = ",".join([debtors_uid , creditors_uid , transfer_amount])
+        transfer_data = ",".join([debtors_uid , creditors_uid , transfer_amount , card_password])
         
         client_socket.send("main:2".encode())
         
@@ -54,8 +59,9 @@ def main_menu(client_socket: socket.socket):
     if choice == "3":
         debtors_uid = input("Enter your uid -> ")
         transfer_amount = input("Enter the transfer amount -> ")
+        card_password = input("Enter your card password -> ")
         
-        transfer_data = ",".join([debtors_uid , transfer_amount])
+        transfer_data = ",".join([debtors_uid , transfer_amount , card_password])
         
         client_socket.send("main:3".encode())
         
@@ -66,9 +72,59 @@ def main_menu(client_socket: socket.socket):
         
         return_message = client_socket.recv(1024).decode()
         print(return_message)
-
+        
     if choice == "4":
+        debtors_uid = input("Enter your uid -> ")
+        creditors_uid = input("Enter the target uid -> ")
+        transfer_amount = input("Enter the transfer amount -> ")
+        card_password = input("Enter your card password -> ")
+        
+        transfer_data = ",".join([debtors_uid , creditors_uid , transfer_amount , card_password])
+        
         client_socket.send("main:4".encode())
+        
+        trigger_message = client_socket.recv(1024).decode()
+        print(trigger_message)
+        
+        client_socket.send(transfer_data.encode())
+        
+        return_message = client_socket.recv(1024).decode()
+        print(return_message)
+        
+    if choice == "5":
+        user_uid = input("Enter your uid -> ")
+        card_password = input("Enter your card password -> ")
+        
+        transfer_data = ",".join([user_uid , card_password])
+        
+        client_socket.send("main:5".encode())
+        
+        trigger_message = client_socket.recv(1024).decode()
+        print(trigger_message)
+        
+        client_socket.send(transfer_data.encode())
+        
+        return_message = client_socket.recv(1024).decode()
+        print(return_message)
+        
+    if choice == "6":
+        user_uid = input("Enter your uid -> ")
+        card_password = input("Enter your card password -> ")
+        
+        transfer_data = ",".join([user_uid , card_password])
+        
+        client_socket.send("main:6".encode())
+        
+        trigger_message = client_socket.recv(1024).decode()
+        print(trigger_message)
+        
+        client_socket.send(transfer_data.encode())
+        
+        return_message = client_socket.recv(1024).decode()
+        print(return_message)
+
+    if choice == "7":
+        client_socket.send("main:7".encode())
         return
     
     main_menu(client_socket)

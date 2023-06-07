@@ -115,3 +115,24 @@ def update_account_savings(uid: str, new_savings: float):
             
     except Exception as error:
         print(f"An error occurred while updating the database: {error}")
+        
+def update_credit_invoice(uid:str , new_invoice: float):
+    data_base = get_database()
+    
+    account_found: bool = False
+    
+    for account in data_base["accounts"]:
+        if account["uid"] == uid:
+            account["credit_card"]["invoice"] = new_invoice
+            account_found = True
+            break
+        
+    if not account_found:
+        print(f"Account with uid {uid} not found!")
+        
+    try:
+        with open(DATABASE_PATH , "w") as data_base_file:
+            json.dump(data_base , data_base_file , indent = 4)
+    
+    except Exception as error:
+        print(f"An error occurred while updating the database: {error}")

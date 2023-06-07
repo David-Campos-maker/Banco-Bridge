@@ -3,30 +3,30 @@
         {
             "name": "David",
             "uid": "FlcC8111",
-            "balance": 9999999999999906.0,
+            "balance": 9999999999999606.0,
             "phone": "+55-30148855",
             "currency": "BRL",
             "access_password_hash": "$pbkdf2-sha256$29000$Wav1PmdMKYVwztlb611rjQ$azPpJc9UwHwlmGPXrruxklRdN0RchDS3YuF2As1ttWU",
             "card_password_hash": "$pbkdf2-sha256$29000$rfX.n3PO.d.7F6LUGiOEMA$SN32w2P8OXcKOHWOspxjSYou7RyaepoiRG4qYYntPyA",
             "credit_card": {
-                "approved_limit": 0.0,
-                "invoice": 0.0,
-                "changed_limit": 0.0
+                "approved_limit": 1e+17,
+                "invoice": 0,
+                "changed_limit": 10000000000.0
             },
             "savings": 99999999999999.78
         },
         {
             "name": "Calango",
             "uid": "soTG3579",
-            "balance": 7067.15,
+            "balance": 500.50,
             "phone": "+54-52987746",
             "currency": "ARS",
             "access_password_hash": "$pbkdf2-sha256$29000$cW4NQQihlLLWuvdeaw3hfA$XVvncz9UgV7/EBa4jud6MyTbjoMd7H2s1lT9ycFRwT4",
             "card_password_hash": "$pbkdf2-sha256$29000$y1lLSak1Zsy5t/a.dw5BaA$ZRQ1BcXZfy4xEbISaMRI/Xt/epZUcyCp98sMRPFUXkI",
             "credit_card": {
-                "approved_limit": 0.0,
+                "approved_limit": 10000.0,
                 "invoice": 0.0,
-                "changed_limit": 0.0
+                "changed_limit": 1000.0
             },
             "savings": 150.0
         },
@@ -39,24 +39,24 @@
             "access_password_hash": "$pbkdf2-sha256$29000$C.H8v9e61zqndK6V0roX4g$B3hZ/Rx6VZ6AOvg6eBzNCs9cFrKSiBMgfOfaX49Vb88",
             "card_password_hash": "$pbkdf2-sha256$29000$zxkjBAAgBAAgpNS61/r/Hw$nOAEwLp5Km0rEjI/ivsp033v9jaog54eZ/dFAss2IGQ",
             "credit_card": {
-                "approved_limit": 0.0,
+                "approved_limit": 10000.0,
                 "invoice": 0.0,
-                "changed_limit": 0.0
+                "changed_limit": 1000.0
             },
             "savings": 0.0
         },
         {
             "name": "American Guy",
             "uid": "qfsx0166",
-            "balance": -0.03425075,
+            "balance": 450.46574925,
             "phone": "+1-23654187",
             "currency": "USD",
             "access_password_hash": "$pbkdf2-sha256$29000$771XqtW6d651jnGOUcrZuw$.GUYBrzZNx1x1z7/WL2VPgXNRowGQDgSNvFayDatJZo",
             "card_password_hash": "$pbkdf2-sha256$29000$nzMm5FyLEWJMSen9X.t9Lw$2tuCedW77.5F/3YB477bj0rk1o1LKXmhjimpKfsXlbs",
             "credit_card": {
-                "approved_limit": 0.0,
+                "approved_limit": 10000.0,
                 "invoice": 0.0,
-                "changed_limit": 0.0
+                "changed_limit": 1000.0
             },
             "savings": 0.0
         },
@@ -69,9 +69,9 @@
             "access_password_hash": "$pbkdf2-sha256$29000$h1AqhbD2/j8n5Pw/p3RuDQ$PPRuE91WPdspfSRDvJuZFZ7D1iskzE3u3IbQSufij2w",
             "card_password_hash": "$pbkdf2-sha256$29000$z3lPSQnhPMd4LyXEeK8VQg$kqjGxu6ia7GUh1dWOagTH8O83bENYA2zOz1Kl7lNkRA",
             "credit_card": {
-                "approved_limit": 0.0,
+                "approved_limit": 10000.0,
                 "invoice": 0.0,
-                "changed_limit": 0.0
+                "changed_limit": 1000.0
             },
             "savings": 0.0
         }

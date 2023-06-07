@@ -15,7 +15,7 @@ try:
     
     # Show login or sign in menu
     login_or_sign_in_menu(client_socket)
-    
+       
 finally:
     # Clean up the connection
     client_socket.close()
