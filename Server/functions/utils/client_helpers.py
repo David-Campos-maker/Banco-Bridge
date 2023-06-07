@@ -1,7 +1,7 @@
 import socket
 from typing import Optional
 from functions.login import login
-from functions.transactions import transfer
+from functions.transactions import transfer , transfer_with_savings_account , deposit_into_savings_account
 from functions.sign_in import sign_in , get_access_password
 from functions.utils.account_helpers import get_account_by_uid
 
@@ -25,11 +25,29 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
             
     elif message == "main:2":
         # Handle option 2
-        client_socket.send("Option 2 executed".encode())
+        client_socket.send("Transfer with savings account executed".encode())
+        
+        tranfer_data = client_socket.recv(1024).decode()
+        
+        debtors_uid , creditors_uid , transfer_amount = tranfer_data.split(",")
+        result = transfer_with_savings_account(debtors_uid , creditors_uid , float(transfer_amount))
+        
+        client_socket.send(result.encode())
+        
+        print("Transação Feita")
         
     elif message == "main:3":
         # Handle option 3
-        client_socket.send("Option 3 executed".encode())
+        client_socket.send("Deposit into savings account executed".encode())
+        
+        tranfer_data = client_socket.recv(1024).decode()
+        
+        debtors_uid , transfer_amount = tranfer_data.split(",")
+        result = deposit_into_savings_account(debtors_uid , float(transfer_amount))
+        
+        client_socket.send(result.encode())
+        
+        print("Transação Feita")
         
     elif message == "main:4":
         # Handle logout

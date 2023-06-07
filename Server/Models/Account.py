@@ -2,6 +2,7 @@ import json
 import os
 from random import choice
 from string import ascii_letters, digits
+from Models.CreditCard import CreditCard
 from functions.utils.account_helpers import get_account_by_uid
 from passlib.hash import pbkdf2_sha256
 
@@ -20,6 +21,10 @@ class Account:
         
         self.access_password = pbkdf2_sha256.hash(access_password)
         self.card_password = pbkdf2_sha256.hash(str(card_password))
+        
+        self.credit_card = CreditCard()
+        
+        self.savings = 0.0
         
     def generate_uid(self):
         letters = "".join(choice(ascii_letters) for _ in range(4))

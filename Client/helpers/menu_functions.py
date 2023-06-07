@@ -6,8 +6,8 @@ def main_menu(client_socket: socket.socket):
     print("******************\n")
     
     print("1. Transfer")
-    print("2. Option 2")
-    print("3. Option 3")
+    print("2. Transfer with savings account")
+    print("3. Deposit into savings account")
     print("4. Logout")
 
     choice = input("Choose the option that indicates what you want to do -> ")
@@ -35,14 +35,37 @@ def main_menu(client_socket: socket.socket):
         print(return_message)
         
     if choice == "2":
+        debtors_uid = input("Enter your uid -> ")
+        creditors_uid = input("Enter the target uid -> ")
+        transfer_amount = input("Enter the transfer amount -> ")
+        
+        transfer_data = ",".join([debtors_uid , creditors_uid , transfer_amount])
+        
         client_socket.send("main:2".encode())
+        
         trigger_message = client_socket.recv(1024).decode()
         print(trigger_message)
         
+        client_socket.send(transfer_data.encode())
+        
+        return_message = client_socket.recv(1024).decode()
+        print(return_message)
+        
     if choice == "3":
+        debtors_uid = input("Enter your uid -> ")
+        transfer_amount = input("Enter the transfer amount -> ")
+        
+        transfer_data = ",".join([debtors_uid , transfer_amount])
+        
         client_socket.send("main:3".encode())
+        
         trigger_message = client_socket.recv(1024).decode()
         print(trigger_message)
+        
+        client_socket.send(transfer_data.encode())
+        
+        return_message = client_socket.recv(1024).decode()
+        print(return_message)
 
     if choice == "4":
         client_socket.send("main:4".encode())

@@ -18,13 +18,20 @@ def add_new_user(name: str , phone: str , access_password: str , card_password: 
     
     new_account = Account(name , phone , access_password , card_password)
     
-    new_user: dict = {'name' : new_account.name , 
+    new_user: dict = {
+        'name' : new_account.name , 
         'uid' : new_account.uid , 
         'balance' : new_account.balance , 
         'phone' : new_account.phone , 
         'currency': new_account.currency ,
         'access_password_hash': new_account.access_password ,
-        'card_password_hash': new_account.card_password
+        'card_password_hash': new_account.card_password ,
+        'credit_card': {
+            'approved_limit': new_account.credit_card.approved_limit ,
+            'invoice': new_account.credit_card.invoice ,
+            'changed_limit': new_account.credit_card.changed_limit
+        },
+        'savings': new_account.savings
     }
     
     accounts.append(new_user)
@@ -73,6 +80,28 @@ def update_account_balance(uid: str, new_balance: float):
     for account in data_base['accounts']:
         if account['uid'] == uid:
             account['balance'] = new_balance
+            account_found = True
+            break
+    
+    if not account_found:
+        print(f"Account with uid {uid} not found!")
+        return
+    
+    try:
+        with open(DATABASE_PATH , "w") as data_base_file:
+            json.dump(data_base , data_base_file , indent = 4)
+            
+    except Exception as error:
+        print(f"An error occurred while updating the database: {error}")
+        
+def update_account_savings(uid: str, new_savings: float):
+    data_base = get_database()
+    
+    account_found: bool = False
+    
+    for account in data_base['accounts']:
+        if account['uid'] == uid:
+            account['savings'] = new_savings
             account_found = True
             break
     
