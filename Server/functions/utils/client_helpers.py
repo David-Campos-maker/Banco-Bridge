@@ -1,5 +1,4 @@
 import socket
-from typing import Optional
 from functions.login import login
 from functions.transactions import *
 from functions.sign_in import sign_in , get_access_password
@@ -97,7 +96,7 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
     handle_main_menu(client_socket)
     return False
 
-def handle_client(client_socket: socket.socket) -> Optional[str]:
+def handle_client(client_socket: socket.socket):
     # Receive message from client
     message = client_socket.recv(1024).decode()
     
@@ -135,6 +134,6 @@ def handle_client(client_socket: socket.socket) -> Optional[str]:
     elif message == "login:3":
         client_socket.send("Goodbye!".encode())
         client_socket.close()
-        return "Exit"
+        return
     
     handle_client(client_socket)
