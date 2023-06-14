@@ -233,3 +233,14 @@ def pay_credit_invoice_with_savings_account(user_uid: str , card_password: str) 
             
     except Exception as error:
         return f"An error occurred! {error}"
+    
+def get_statement(uid: str):
+    account_data = get_account_by_uid(uid)
+    if account_data is None:
+        raise ValueError(f"Error: account with uid {uid} not found")
+    
+    # Check if the "statement" object exists and create it if it does not exist
+    if "statement" not in account_data:
+        account_data["statement"] = []
+    
+    return account_data["statement"]

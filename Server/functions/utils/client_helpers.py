@@ -1,3 +1,4 @@
+import json
 import socket
 from functions.login import login
 from functions.transactions import *
@@ -20,7 +21,7 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
         
         client_socket.send(result.encode())
         
-        print("Transação Feita")
+        print("Transaction Done!")
             
     elif message == "main:2":
         # Handle option 2
@@ -33,7 +34,7 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
         
         client_socket.send(result.encode())
         
-        print("Transação Feita")
+        print("Transaction Done!")
         
     elif message == "main:3":
         # Handle option 3
@@ -46,7 +47,7 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
         
         client_socket.send(result.encode())
         
-        print("Transação Feita")
+        print("Transaction Done!")
         
     elif message == "main:4":
         # Handle option 4
@@ -59,7 +60,7 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
         
         client_socket.send(result.encode())
         
-        print("Transação Feita")
+        print("Transaction Done!")
         
     elif message == "main:5":
         # Handle option 5
@@ -73,7 +74,7 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
         
         client_socket.send(result.encode())
         
-        print("Transação Feita")
+        print("Transaction Done!")
         
     elif message == "main:6":
         # Handle option 6
@@ -87,12 +88,21 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
         
         client_socket.send(result.encode())
         
-        print("Transação Feita")
+        print("Transaction Done!")
         
     elif message == "main:7":
-        # Handle logout
-        return True
-    
+      # Handle option 7 (new option to view statement)
+      uid = client_socket.recv(1024).decode()
+      
+      statement = get_statement(uid)
+      
+      statement_str = json.dumps(statement)
+      client_socket.send(statement_str.encode())
+
+    elif message == "main:8":
+      # Handle logout
+      return True
+
     handle_main_menu(client_socket)
     return False
 

@@ -13,7 +13,14 @@
                 "invoice": 0,
                 "changed_limit": 10000000000.0
             },
-            "savings": 99999999999999.78
+            "savings": 99999999999999.78,
+            "statement": [
+                {
+                    "destination": "soTG3579",
+                    "amount": -0.13436587500000002,
+                    "date": "2023-06-14"
+                }
+            ]
         }
     ]
 }

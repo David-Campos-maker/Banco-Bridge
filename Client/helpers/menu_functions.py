@@ -1,4 +1,5 @@
 import socket
+import json
 
 def main_menu(client_socket: socket.socket):
     print("\n******************")
@@ -9,13 +10,14 @@ def main_menu(client_socket: socket.socket):
     print("2. Transfer with savings account")
     print("3. Deposit into savings account")
     print("4. Transfer with credit")
-    print("5. Pay credit invoice")
-    print("6. Pay credit invoice with savings account")
-    print("7. Logout")
+    print("5. Pay credit invoice with savings account")
+    print("6. Pay credit invoice")
+    print("7. View statement")
+    print("8. Logout")
 
     choice = input("Choose the option that indicates what you want to do -> ")
 
-    if choice not in ["1", "2", "3", "4" , "5" , "6" , "7"]:
+    if choice not in ["1", "2", "3", "4" , "5" , "6" , "7", "8"]:
         print("Invalid choice!")
         main_menu(client_socket)
         return
@@ -124,8 +126,23 @@ def main_menu(client_socket: socket.socket):
         print(return_message)
 
     if choice == "7":
-        client_socket.send("main:7".encode())
-        return
+      # Option to view statement
+      uid = input("Enter your uid -> ")
+      
+      client_socket.send("main:7".encode())
+      client_socket.send(uid.encode())
+      
+      statement_str = client_socket.recv(1024).decode()
+      statement = json.loads(statement_str)
+      
+      for transaction in statement:
+          print(f"{transaction['date']}: {transaction['amount']} to/from: {transaction['destination']}")
+
+    if choice == "8":
+      client_socket.send("main:8".encode())
+      return
+
+    main_menu(client_socket)
     
     main_menu(client_socket)
 
