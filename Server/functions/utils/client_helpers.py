@@ -49,7 +49,7 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
         print("Transação Feita")
         
     elif message == "main:4":
-        # Handle option 3
+        # Handle option 4
         client_socket.send("Transfer with credit".encode())
         
         tranfer_data = client_socket.recv(1024).decode()
@@ -62,7 +62,7 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
         print("Transação Feita")
         
     elif message == "main:5":
-        # Handle option 3
+        # Handle option 5
         client_socket.send("Pay credit invoice".encode())
         
         tranfer_data = client_socket.recv(1024).decode()
@@ -97,43 +97,44 @@ def handle_main_menu(client_socket: socket.socket) -> bool:
     return False
 
 def handle_client(client_socket: socket.socket):
-    # Receive message from client
-    message = client_socket.recv(1024).decode()
-    
-    # Handle login or sign in choice
-    if message == "login:1":
-        # Handle sign in
-        user_info = client_socket.recv(1024).decode()
-        name, phone, card_password = user_info.split(",")
+    while True:
+        # Receive message from client
+        message = client_socket.recv(1024).decode()
         
-        access_password = get_access_password(client_socket)
-        
-        if access_password is not None:
-            result_message = sign_in(name, phone, access_password, int(card_password))
-            client_socket.send(result_message.encode())
+        # Handle login or sign in choice
+        if message == "login:1":
+            # Handle sign in
+            user_info = client_socket.recv(1024).decode()
+            name, phone, card_password = user_info.split(",")
             
-    elif message == "login:2":
-        # Handle login
-        uid = client_socket.recv(1024).decode()
-        password = client_socket.recv(1024).decode()
-        
-        if login(uid, password):
-            account = get_account_by_uid(uid)
+            access_password = get_access_password(client_socket)
             
-            if account is not None:
-                client_socket.send(f"Hello {account['name']}! \nBalance: {account['balance']}".encode())
-                logged_out = handle_main_menu(client_socket)
-                if logged_out:
-                    handle_client(client_socket)
-            else:
-                client_socket.send("Account not found!".encode())    
+            if access_password is not None:
+                result_message = sign_in(name, phone, access_password, int(card_password))
+                client_socket.send(result_message.encode())
                 
-        else:
-            client_socket.send("Login failed".encode())
+        elif message == "login:2":
+            # Handle login
+            uid = client_socket.recv(1024).decode()
+            password = client_socket.recv(1024).decode()
             
-    elif message == "login:3":
-        client_socket.send("Goodbye!".encode())
-        client_socket.close()
-        return
-    
-    handle_client(client_socket)
+            if login(uid, password):
+                account = get_account_by_uid(uid)
+                
+                if account is not None:
+                    client_socket.send(
+                        f"Hello {account['name']}! \nBalance: {account['balance']}\nCredit Limit: {account['credit_card']['changed_limit']}\t Credit invoice: {account['credit_card']['invoice']}\n".encode()
+                        )
+                    
+                    logged_out = handle_main_menu(client_socket)
+                    if logged_out:
+                        break
+                else:
+                    client_socket.send("Account not found!".encode())    
+                    
+            else:
+                client_socket.send("Login failed".encode())
+                
+        elif message == "login:3":
+            client_socket.send("Goodbye!".encode())
+            break
