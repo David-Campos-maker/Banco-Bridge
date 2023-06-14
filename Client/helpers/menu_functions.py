@@ -143,8 +143,6 @@ def main_menu(client_socket: socket.socket):
       return
 
     main_menu(client_socket)
-    
-    main_menu(client_socket)
 
 def login_or_sign_in_menu(client_socket: socket.socket):
     print("******************")
