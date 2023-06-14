@@ -14,66 +14,6 @@
                 "changed_limit": 10000000000.0
             },
             "savings": 99999999999999.78
-        },
-        {
-            "name": "Calango",
-            "uid": "soTG3579",
-            "balance": 500.50,
-            "phone": "+54-52987746",
-            "currency": "ARS",
-            "access_password_hash": "$pbkdf2-sha256$29000$cW4NQQihlLLWuvdeaw3hfA$XVvncz9UgV7/EBa4jud6MyTbjoMd7H2s1lT9ycFRwT4",
-            "card_password_hash": "$pbkdf2-sha256$29000$y1lLSak1Zsy5t/a.dw5BaA$ZRQ1BcXZfy4xEbISaMRI/Xt/epZUcyCp98sMRPFUXkI",
-            "credit_card": {
-                "approved_limit": 10000.0,
-                "invoice": 0.0,
-                "changed_limit": 1000.0
-            },
-            "savings": 150.0
-        },
-        {
-            "name": "Omega 3 da Top Therm",
-            "uid": "bSiP9642",
-            "balance": 500.0195,
-            "phone": "+49-52416987",
-            "currency": "EUR",
-            "access_password_hash": "$pbkdf2-sha256$29000$C.H8v9e61zqndK6V0roX4g$B3hZ/Rx6VZ6AOvg6eBzNCs9cFrKSiBMgfOfaX49Vb88",
-            "card_password_hash": "$pbkdf2-sha256$29000$zxkjBAAgBAAgpNS61/r/Hw$nOAEwLp5Km0rEjI/ivsp033v9jaog54eZ/dFAss2IGQ",
-            "credit_card": {
-                "approved_limit": 10000.0,
-                "invoice": 0.0,
-                "changed_limit": 1000.0
-            },
-            "savings": 0.0
-        },
-        {
-            "name": "American Guy",
-            "uid": "qfsx0166",
-            "balance": 450.46574925,
-            "phone": "+1-23654187",
-            "currency": "USD",
-            "access_password_hash": "$pbkdf2-sha256$29000$771XqtW6d651jnGOUcrZuw$.GUYBrzZNx1x1z7/WL2VPgXNRowGQDgSNvFayDatJZo",
-            "card_password_hash": "$pbkdf2-sha256$29000$nzMm5FyLEWJMSen9X.t9Lw$2tuCedW77.5F/3YB477bj0rk1o1LKXmhjimpKfsXlbs",
-            "credit_card": {
-                "approved_limit": 10000.0,
-                "invoice": 0.0,
-                "changed_limit": 1000.0
-            },
-            "savings": 0.0
-        },
-        {
-            "name": "Aracy da Top Therme",
-            "uid": "nGLi1191",
-            "balance": 10.0,
-            "phone": "+44-5698741",
-            "currency": "GBP",
-            "access_password_hash": "$pbkdf2-sha256$29000$h1AqhbD2/j8n5Pw/p3RuDQ$PPRuE91WPdspfSRDvJuZFZ7D1iskzE3u3IbQSufij2w",
-            "card_password_hash": "$pbkdf2-sha256$29000$z3lPSQnhPMd4LyXEeK8VQg$kqjGxu6ia7GUh1dWOagTH8O83bENYA2zOz1Kl7lNkRA",
-            "credit_card": {
-                "approved_limit": 10000.0,
-                "invoice": 0.0,
-                "changed_limit": 1000.0
-            },
-            "savings": 0.0
         }
     ]
 }

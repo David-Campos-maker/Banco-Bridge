@@ -123,7 +123,7 @@ def handle_client(client_socket: socket.socket):
                 
                 if account is not None:
                     client_socket.send(
-                        f"Hello {account['name']}! \nBalance: {account['balance']}\nCredit Limit: {account['credit_card']['changed_limit']}\t Credit invoice: {account['credit_card']['invoice']}\n".encode()
+                        f"\nHello {account['name']}! \nBalance: {account['balance']}\nCredit Limit: {account['credit_card']['changed_limit']}\t Credit invoice: {account['credit_card']['invoice']}\n".encode()
                         )
                     
                     logged_out = handle_main_menu(client_socket)

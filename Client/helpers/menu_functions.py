@@ -23,10 +23,10 @@ def main_menu(client_socket: socket.socket):
     if choice == "1":
         debtors_uid = input("Enter your uid -> ")
         creditors_uid = input("Enter the target uid -> ")
-        transfer_amount = input("Enter the transfer amount -> ")
-        card_password = input("Enter your card password -> ")
+        transfer_amount = float(input("Enter the transfer amount -> "))
+        card_password = int(input("Enter your card password -> "))
         
-        transfer_data = ",".join([debtors_uid , creditors_uid , transfer_amount , card_password])
+        transfer_data = ",".join([debtors_uid , creditors_uid , str(transfer_amount) , str(card_password)])
         
         client_socket.send("main:1".encode())
         
@@ -41,10 +41,10 @@ def main_menu(client_socket: socket.socket):
     if choice == "2":
         debtors_uid = input("Enter your uid -> ")
         creditors_uid = input("Enter the target uid -> ")
-        transfer_amount = input("Enter the transfer amount -> ")
-        card_password = input("Enter your card password -> ")
+        transfer_amount = float(input("Enter the transfer amount -> "))
+        card_password = int(input("Enter your card password -> "))
         
-        transfer_data = ",".join([debtors_uid , creditors_uid , transfer_amount , card_password])
+        transfer_data = ",".join([debtors_uid , creditors_uid , str(transfer_amount) , str(card_password)])
         
         client_socket.send("main:2".encode())
         
@@ -58,10 +58,10 @@ def main_menu(client_socket: socket.socket):
         
     if choice == "3":
         debtors_uid = input("Enter your uid -> ")
-        transfer_amount = input("Enter the transfer amount -> ")
-        card_password = input("Enter your card password -> ")
+        transfer_amount = float(input("Enter the transfer amount -> "))
+        card_password = int(input("Enter your card password -> "))
         
-        transfer_data = ",".join([debtors_uid , transfer_amount , card_password])
+        transfer_data = ",".join([debtors_uid , str(transfer_amount) , str(card_password)])
         
         client_socket.send("main:3".encode())
         
@@ -76,10 +76,10 @@ def main_menu(client_socket: socket.socket):
     if choice == "4":
         debtors_uid = input("Enter your uid -> ")
         creditors_uid = input("Enter the target uid -> ")
-        transfer_amount = input("Enter the transfer amount -> ")
-        card_password = input("Enter your card password -> ")
+        transfer_amount = float(input("Enter the transfer amount -> "))
+        card_password = int(input("Enter your card password -> "))
         
-        transfer_data = ",".join([debtors_uid , creditors_uid , transfer_amount , card_password])
+        transfer_data = ",".join([debtors_uid , creditors_uid , str(transfer_amount) , str(card_password)])
         
         client_socket.send("main:4".encode())
         
@@ -93,9 +93,9 @@ def main_menu(client_socket: socket.socket):
         
     if choice == "5":
         user_uid = input("Enter your uid -> ")
-        card_password = input("Enter your card password -> ")
+        card_password = int(input("Enter your card password -> "))
         
-        transfer_data = ",".join([user_uid , card_password])
+        transfer_data = ",".join([user_uid , str(card_password)])
         
         client_socket.send("main:5".encode())
         
@@ -109,9 +109,9 @@ def main_menu(client_socket: socket.socket):
         
     if choice == "6":
         user_uid = input("Enter your uid -> ")
-        card_password = input("Enter your card password -> ")
+        card_password = int(input("Enter your card password -> "))
         
-        transfer_data = ",".join([user_uid , card_password])
+        transfer_data = ",".join([user_uid , str(card_password)])
         
         client_socket.send("main:6".encode())
         
